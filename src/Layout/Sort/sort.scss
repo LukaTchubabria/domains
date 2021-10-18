@@ -1,0 +1,63 @@
+@import '../../main.scss';
+
+
+.sort--mb {
+    margin: 20px;
+    @include flex;
+
+    button {
+        padding: 20px;
+        @include flex;
+        @include btn(45%, 40px, white, $btn-border: $border, $s: 14px, $f: 'TKT-R', $c: $grey);
+
+        .icon-Dropdown---2 {
+            font-size: 10px;
+        }
+    }
+
+    @include desktop {
+        display: none;
+    }
+}
+
+.sort--dsk {
+    display: none;
+    margin-bottom: 30px;
+
+    @include desktop {
+        @include flex;
+    }
+
+    &--left {
+        @include flex;
+        
+        h6 {
+            @include font(14px, 'TKT-B', $dark-blue)
+        }
+
+        ul {
+            @include flex;
+
+            li {
+                margin-left: 20px;
+                @include font(14px, 'TKT-R', $dark-grey);
+                cursor: pointer;
+                padding: 5px;
+            }
+
+            .active {
+                color: $action-color;
+
+                i {
+                    margin-left: 10px; 
+                }
+            }
+        }
+    }
+
+    & > p {
+        @include font(14px, 'TKT-R', $dark-blue);
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}

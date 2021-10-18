@@ -1,0 +1,165 @@
+@import '../../main.scss';
+
+
+
+.filter {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 99;
+  background-color: white;
+  width: 100vw;
+  @include desktop {
+    max-width: 380px;
+    margin-top: 30px;
+    position: inherit;
+    border: $border;
+    border-radius: 15px;
+    z-index: 0;
+  }
+
+  &--mb__header {
+    padding: 12px 20px;
+    box-shadow: 0px 2px 5px #0000000F;
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    @include flex;
+    @include desktop {
+      display: none;
+    }
+
+
+    h3 {
+      @include font(16px, 'TKT-B', $grey);
+    }
+
+    button {
+      @include btn(36px, 36px, $light-grey, $br-radius: 10px);
+
+      i {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__box {
+    padding: 30px 20px 125px 20px;
+    @include desktop {
+      padding: 30px 20px 0 20px
+    }
+
+    &__search {
+      margin-top: 30px;
+      padding: 10px;
+      @include btn(100%, 60px, white, $br-radius: 10px, $btn-border: $border);
+      @include desktop {
+        margin-top: 0;
+      }
+    }
+
+    & > div:nth-child(n+1) {
+      margin-top: 35px;
+    }
+
+    h4 {
+      @include font(16px, 'TKT-B', $black);
+    }
+
+    .price-filt-inputs {
+      @include flex;
+      margin: 15px 0;
+
+      .min-input-main {
+        @include btn(45%, 44px, white, $br-radius: 10px, $btn-border: $border);
+      }
+    }
+
+    .categ-filt--dsgn,
+    .domain-filt--dsgn {
+      margin-top: 20px;
+
+      .checkbox--prett {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 25px;
+        cursor: pointer;
+        @include font(16px, 'TKT-R', $black);
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      .checkbox--prett input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+
+      /* Create a custom checkbox */
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: white;
+        border: 1px solid #E5E5ED;
+        border-radius: 6px;
+      }
+
+      .checkbox--prett:hover input~.checkmark {
+        background-color: $bg;
+      }
+
+      .checkbox--prett input:checked~.checkmark {
+        background-color: $action-color;
+      }
+
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      .checkbox--prett input:checked~.checkmark:after {
+        display: block;
+      }
+
+      .checkbox--prett .checkmark:after {
+        left: 6px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+  }
+  .search-btn {
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+    padding: 15px 20px 18px 20px;
+    background-color: white;
+    box-shadow: 0px -3px 6px #00000014;
+    width: 100%;
+    @include desktop {
+      display: none;
+    }
+
+
+    button {
+      @include btn(100%, 50px, #003333, $br-radius: 10px);
+      @include font(16px, 'TKT-B', white)
+    }
+  }
+}

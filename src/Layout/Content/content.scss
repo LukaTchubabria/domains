@@ -1,0 +1,27 @@
+@import '../../main.scss';
+
+.content__box {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1286px;
+    margin: 0 auto;
+
+    &--left > p {
+        display: none;
+        @include font(16px, 'TKT-B', $grey);
+
+        span {
+            color: $black;
+        }
+        @include desktop {
+            display: block;
+        }
+    }
+
+    &--right {
+        width: 100%;
+        @include desktop {
+            width: calc(100% - 420px);
+        }
+    }
+}

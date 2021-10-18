@@ -1,0 +1,72 @@
+/**********************/
+/////// Variables /////
+/*********************/
+
+$action-color: #99CC66;
+$bg: #FAFAFB;
+$border-color: #F1F1F5;
+$light-grey: #F5F5F8;
+$grey: #696974;
+$dark-grey: #92929D;
+$dark-blue: #171725;
+$black: #171D25;
+
+$border: 1px solid #F1F1F5;
+
+/**********************/
+/////// Mixins ////////
+/*********************/
+
+// Flex mixin 
+
+@mixin flex($justify: space-between, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+// Font mixins
+
+@mixin font($size, $family, $color, $lh: false) {
+    font-size: $size;
+    font-family: $family;
+    color: $color;
+
+    @if $lh {
+        line-height: $lh;
+    }
+}
+
+// Button mixin
+
+@mixin btn($w, $h, $bg-btn, $br-radius: 10px, $btn-border: none, $s: false, $f: false, $c: false) {
+    width: $w;
+    height: $h;
+    border-radius: $br-radius;
+    background: $bg-btn;
+    border: $btn-border;
+    cursor: pointer;
+
+    @if $s and $f and $c {
+        @include font($s, $f, $c)
+    }
+}
+
+
+// center item with position absolute
+
+@mixin content-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+// Responsive
+
+@mixin desktop {
+    @media (min-width: 1100px){
+        @content
+    }
+}

@@ -1,0 +1,24 @@
+@import '../../main.scss';
+
+.notfound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 130px 0;
+
+    img {
+        margin: 0 auto;
+
+    }
+    h3 {
+        @include font(18px, "TKT-B", $grey);
+        margin-top: 36px;
+    }
+    p {
+        @include font(14px, "TKT-R", $dark-grey);
+        text-align: center;
+        max-width: 502px;
+        margin-top: 15px;
+    }
+}

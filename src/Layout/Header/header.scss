@@ -1,0 +1,118 @@
+@import '../../main.scss';
+
+.main__header {
+    position: fixed;
+    z-index: 10;
+    background-color: white;
+    box-shadow: 0px 3px 6px #00000005;
+    width: 100%;
+    padding: 28px 20px;
+
+    &__cont {
+        max-width: 1286px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+
+        &__logo {
+            display: flex;
+            align-items: center;
+
+            button {
+                background-color: rgba(0, 0, 0, 0);
+                border: none;
+                @include desktop {
+                    display: none;
+                }
+            }
+
+            img {
+                width: 121px;
+                margin-left: 14px;
+                @include desktop {
+                    width: 183px;;
+                }
+            }
+        }
+    }
+
+    .account-setting {
+        display: flex;
+
+
+        button {
+            position: relative;
+            border: none;
+            background-color: rgba(0, 0, 0, 0);
+            @include btn(50px, 46px, 12px, white);
+            @include desktop {
+                border: $border;
+                border-radius: 12px;
+                margin-left: 20px;
+            }
+
+            i {
+                font-size: 18px;
+                color: #003333;
+                @include desktop {
+                    color: $dark-grey;
+                }
+            }
+
+            span {
+                position: absolute;
+                top: -10px;
+                right: -10px;
+                background-color: #FF4D4D;
+                @include font(11px,  'TKT-B', white);
+                padding: 5px 7px;
+                border-radius: 100%;
+            }
+        }
+
+        .lang {
+            display: none;
+            @include desktop {
+                display: block;
+            }
+        }
+    }
+
+}
+
+.nav__header {
+    display: none;
+    background-color: white;
+    box-shadow: 0px 3px 6px #00000005;
+    width: 100%;
+    padding: 28px 20px;
+    margin-top: 102px;
+    @include desktop {
+        display: inline-block;
+    }
+
+    nav {
+        max-width: 1286px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+
+        ul:first-child {
+            width: 50%;
+        }
+        ul:last-child {
+            width: 30%;
+        }
+        ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            li {
+                @include font(14px, 'TKT-M', $grey)
+            }
+        }
+    }
+} 

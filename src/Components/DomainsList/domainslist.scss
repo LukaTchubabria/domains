@@ -1,0 +1,11 @@
+@import '../../main.scss';
+
+.domain--list {
+    background-color: white;
+    border: $border;
+    max-width: 1007px;
+    padding: 20px;
+    @include desktop {
+        border-radius: 15px;
+    }
+}

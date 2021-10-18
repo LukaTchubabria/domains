@@ -1,0 +1,83 @@
+@import '../../main.scss';
+
+.domain__item {
+    @include flex;
+    padding: 24px 20px;
+    border-top: 2px solid $border-color;
+    cursor: pointer;
+    &:first-child {
+        border: none;
+    }
+    &:hover {
+        background-color: $bg;
+        border-radius: 10px;
+        border: none;
+        padding: 26px 20px;
+    }
+    &:first-child:hover {
+        padding: 24px 20px 26px 20px;
+    }
+    &:hover + .domain__item {
+        border: none;
+    }
+
+    &--left {
+        @include flex;
+
+        button {
+            @include btn(36px, 36px, $light-grey);
+
+            i {
+                color: $grey;
+                font-size: 8px;
+            }
+        }
+
+        .active {
+            @include btn(36px, 36px, white, $btn-border: 1px solid $action-color);
+            
+            i {
+                color: $action-color;
+            }
+        }
+
+        p {
+            margin-left: 20px;
+            @include font(16px, 'TKT-M', $black)
+        }
+    }
+
+    &--right {
+        @include flex;
+
+        &__price {
+            margin-right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+
+            p:first-child{
+                @include font(16px, 'TKT-B', $dark-blue);
+            }
+            p:last-child{
+                @include font(12px, 'TKT-R', $grey);
+            }
+        }
+
+        button {
+            @include flex;
+            @include btn(100%, 36px, $action-color, $s: 14px, $f: 'TKT-M', $c: white);
+
+            i {
+                margin: 0 5px;
+                font-size: 14px;
+                color: white;
+            }
+
+            &:disabled {
+                background-color: $border-color;
+                color: $grey;
+            }
+        }
+    }
+}

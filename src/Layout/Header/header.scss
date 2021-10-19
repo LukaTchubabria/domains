@@ -73,19 +73,30 @@
             }
         }
         .user {
-            @include flex;
-            width: 160px;
+            width: 60px;
             padding: 0 10px;
+            @include desktop {
+                width: 160px;
+                @include flex;
+            }
 
             p {
                 @include font(14px, "TKT-R", $grey);
                 height: 14px;
                 width: 80px;
                 overflow: hidden;
+                display: none;
+                @include desktop {
+                    display: block;
+                }
             }
 
             i:last-child {
                 font-size: 10px;
+                display: none;
+                @include desktop {
+                    display: block;
+                }
             }
         }
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./content.scss";
-import DomainsList from "../../Components/DomainsList/DomainsList";
+import Banner from "../../Components/Banner/Banner";
+import DomainsList from "../DomainsList/DomainsList";
 import Filter from "../Filter/Filter";
 import Sort from "../Sort/Sort";
 import NotFound from "../../Components/NotFound/NotFoud";
@@ -55,39 +56,42 @@ const Content = (props) => {
 
 
   return (
-    <div className="content__box">
-      <div className="content__box--left">
-        <p>
-          დომენები მარკეტზე: <span>{domainsList.length}</span>
-        </p>
-        <Filter 
-          onClickMenu={props.onClickMenu} 
-          style={props.style}
-          appExtension={appExtension}
-          category={domainCategory}
-          num={domainNum}
-          price={domainPrice}
-          onChange={(newValue) => setAppExtension(newValue)}
-          onChangeCategory={(newValue) => setDomainCategory(newValue)}
-          onChangeNum={(newValue) => setDomainNum(newValue)}
-          onChangePrice={(newValue) => setDomainPrice(newValue)}
-        />
-        <div className="search--result">
-          <p>market</p>
-          <i className="icon-cancel"></i>
+    <>
+      <Banner />
+      <div className="content__box">
+        <div className="content__box--left">
+          <p>
+            დომენები მარკეტზე: <span>{domainsList.length}</span>
+          </p>
+          <Filter 
+            onClickMenu={props.onClickMenu} 
+            style={props.style}
+            appExtension={appExtension}
+            category={domainCategory}
+            num={domainNum}
+            price={domainPrice}
+            onChange={(newValue) => setAppExtension(newValue)}
+            onChangeCategory={(newValue) => setDomainCategory(newValue)}
+            onChangeNum={(newValue) => setDomainNum(newValue)}
+            onChangePrice={(newValue) => setDomainPrice(newValue)}
+          />
+          <div className="search--result">
+            <p>market</p>
+            <i className="icon-cancel"></i>
+          </div>
+        </div>
+        <div className="content__box--right">
+          <Sort />
+          <DomainsList 
+            onClickBuy={props.onClickBuy}
+            filteredDomainsList={filteredDomainsList}
+            cart={props.cart}
+            setCart={props.setCart}
+          />
+          <NotFound />
         </div>
       </div>
-      <div className="content__box--right">
-        <Sort />
-        <DomainsList 
-          onClickBuy={props.onClickBuy}
-          filteredDomainsList={filteredDomainsList}
-          cart={props.cart}
-          setCart={props.setCart}
-        />
-        <NotFound />
-      </div>
-    </div>
+    </>
   );
 };
 

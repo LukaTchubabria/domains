@@ -1,6 +1,6 @@
 import React from 'react'
 import './domainslist.scss'
-import Domain from '../Domain/Domain'
+import Domain from '../../Components/Domain/Domain'
 
 const DomainsList = (props) => {
 

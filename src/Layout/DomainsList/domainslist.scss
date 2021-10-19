@@ -3,9 +3,10 @@
 .domain--list {
     background-color: white;
     border: $border;
-    max-width: 1007px;
+    width: 100%;
     padding: 20px;
     @include desktop {
         border-radius: 15px;
+        max-width: 1007px;
     }
 }

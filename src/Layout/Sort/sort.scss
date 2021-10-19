@@ -15,7 +15,7 @@
         }
     }
 
-    @include desktop {
+    @media (min-width: 1300px){
         display: none;
     }
 }
@@ -24,7 +24,7 @@
     display: none;
     margin-bottom: 30px;
 
-    @include desktop {
+    @media (min-width: 1300px){
         @include flex;
     }
 

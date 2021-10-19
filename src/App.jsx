@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Header from "./Layout/Header/Header";
-import Banner from "./Components/Banner/Banner"
 import Content from "./Layout/Content/Content";
 import './app.scss'
 

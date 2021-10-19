@@ -18,7 +18,7 @@ function filter(filterName, filterState, item) {
       return item[filterName] <= filterState.max && item[filterName] >= filterState.min;
     case "categories":
       if (!filterState.length) return true;
-      return filterState.some(filter => item[filterName][0] === filter);
+      return filterState.some(filter  => item[filterName].some(el => el === filter));
     case "domainExtension":
       if (!filterState.length) return true;
       return filterState.some(filter => item[filterName] === filter);

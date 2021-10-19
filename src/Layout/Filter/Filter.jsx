@@ -1,8 +1,8 @@
 import React from "react";
-import "./filter.scss";
 import { categories, domainsList } from "../../data/domainList";
 import { Slider, InputNumber } from "antd";
 import "antd/dist/antd.css";
+import "./filter.scss";
 
 
 const appdomainExtension = [...new Set(domainsList.map(d => d.domainExtension))];

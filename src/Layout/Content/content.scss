@@ -16,6 +16,22 @@
         @include desktop {
             display: block;
         }
+
+    }
+    .search--result {
+        border: $border;
+        width: 315px;
+        height: 60px;
+        padding: 20px 20px;
+        margin: 70px auto;
+        display: none;
+        @include desktop {
+            @include flex;
+        }
+
+        p {
+            @include font(16px, "TKT-M", $black);
+        }
     }
 
     &--right {

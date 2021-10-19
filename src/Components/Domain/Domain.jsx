@@ -8,7 +8,7 @@ const Domen = (props) => {
 
   return (
     <div
-      className={"domain__item " + (!addCart() ? (toggle ? " active" : "") : null)}
+      className={"domain__item " + (!addCart() ? (toggle ? " active--bg" : "") : null)}
       onClick={() => setToggle(!toggle)}
     >
       <div className="domain__item--left">

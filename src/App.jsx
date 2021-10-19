@@ -11,17 +11,23 @@ function App() {
   // this is cart counter state
   let [buy, setBuy] = useState(0);
 
+  // this is cart object state
+  let [cart, setCart] = useState([]);
+
   return (
     <div className="app">
       <Header 
         onClick={() => setMenu(!menu)}
-        cart={buy}
+        addCart={buy}
+        cartList={cart}
       />
       <Banner />
       <Content
         onClickMenu={() => setMenu(!menu)}
         onClickBuy={() => setBuy(buy += 1)}
         style={menu}
+        cart={cart}
+        setCart={(n) => setCart(n)}
       />
     </div>
   );

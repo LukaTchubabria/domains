@@ -72,12 +72,18 @@ const Content = (props) => {
           onChangeNum={(newValue) => setDomainNum(newValue)}
           onChangePrice={(newValue) => setDomainPrice(newValue)}
         />
+        <div className="search--result">
+          <p>market</p>
+          <i className="icon-cancel"></i>
+        </div>
       </div>
       <div className="content__box--right">
         <Sort />
         <DomainsList 
           onClickBuy={props.onClickBuy}
           filteredDomainsList={filteredDomainsList}
+          cart={props.cart}
+          setCart={props.setCart}
         />
         <NotFound />
       </div>

@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './domainslist.scss'
 import Domain from '../Domain/Domain'
 
 const DomainsList = (props) => {
-    let [cart, setCart] = useState([]);
 
     return (
         <div className='domain--list'>
@@ -14,8 +13,8 @@ const DomainsList = (props) => {
                         domainName={item.domainName}
                         nameSuffix={item.domainExtension}
                         onClickBuy={props.onClickBuy}
-                        cart={cart}
-                        onClickCart={(n) => setCart(n)}
+                        cart={props.cart}
+                        onClickCart={props.setCart}
                         item={item}
                     />
                 </React.Fragment>

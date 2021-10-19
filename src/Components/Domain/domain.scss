@@ -81,3 +81,11 @@
         }
     }
 }
+.active--bg {
+    background-color: $border-color;
+    border-radius: 10px;
+
+    &:hover {
+        background-color: $border-color;
+    }
+}

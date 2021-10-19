@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./header.scss";
 import Cart from "../../Components/Cart/Cart";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const Header = (props) => {
   // if cart is open
@@ -16,7 +16,9 @@ const Header = (props) => {
             <button className="menu-btn" onClick={props.onClick}>
               <i className="icon-menu"></i>
             </button>
-            <img src="/Icons/logo.svg" alt="Logo" />
+            <Link to='/'>
+                <img src="/Icons/logo.svg" alt="Logo" />
+            </Link>
           </div>
           <div className="account-setting">
             <button className="notification">

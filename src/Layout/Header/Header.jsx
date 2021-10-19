@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./header.scss";
 import Cart from "../../Components/Cart/Cart";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Header = (props) => {
   // if cart is open

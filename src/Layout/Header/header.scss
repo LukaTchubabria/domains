@@ -129,8 +129,14 @@
             align-items: center;
 
             li {
-                @include font(14px, 'TKT-M', $grey)
+
+                a {
+                    @include font(14px, 'TKT-M', $grey);
+                }
+                .active {
+                    color: $action-color;
+                }
             }
         }
     }
-} 
+}

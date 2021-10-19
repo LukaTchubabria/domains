@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./content.scss";
+import "./home.scss";
 import Banner from "../../Components/Banner/Banner";
-import DomainsList from "../DomainsList/DomainsList";
-import Filter from "../Filter/Filter";
-import Sort from "../Sort/Sort";
+import DomainsList from "../../Layout/DomainsList/DomainsList";
+import Filter from "../../Layout/Filter/Filter";
+import Sort from "../../Layout/Sort/Sort";
 import NotFound from "../../Components/NotFound/NotFoud";
 import { domainsList } from "../../data/domainList";
 
